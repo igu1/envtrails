@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * doctorenv — scan the project for broken / missing / unused / drift env vars.
+ * envscan — scan the project for broken / missing / unused / drift env vars.
  *
- *   doctorenv
- *   doctorenv --strict      (exit code 1 when issues are found)
- *   doctorenv --json        (machine-readable)
+ *   envscan
+ *   envscan --strict      (exit code 1 when issues are found)
+ *   envscan --json        (machine-readable)
  */
 import * as path from "node:path";
 import { scanEnv } from "./api";
@@ -18,7 +18,7 @@ const dim = (s: string) => (color ? `\x1b[90m${s}\x1b[0m` : s);
 
 const args = process.argv.slice(2);
 if (args.includes("--help") || args.includes("-h")) {
-  console.error("doctorenv [--strict] [--json] [--root .]");
+  console.error("envscan [--strict] [--json] [--root .]");
   process.exit(0);
 }
 const rootArg = args.indexOf("--root");

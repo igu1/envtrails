@@ -1,25 +1,25 @@
-# doctorenv
+# envscan
 
 **Find broken, missing, unused, and inconsistent environment variables across your project.**
 
 > One small problem. One obvious API. Very little setup. Immediate value.
 
 `.env`, `.env.local`, `.env.example`, Dockerfiles, compose files and source
-code drift apart over time. `doctorenv` reads them all and tells you exactly
+code drift apart over time. `envscan` reads them all and tells you exactly
 what's off.
 
 ## Install
 
 ```bash
-npm i -g doctorenv    # or run via npx doctorenv
+npm i -g envscan    # or run via npx envscan
 ```
 
 ## Usage
 
 ```bash
-doctorenv                 # friendly report
-doctorenv --strict        # exit code 1 when issues are found (for CI)
-doctorenv --json          # machine-readable
+envscan                 # friendly report
+envscan --strict        # exit code 1 when issues are found (for CI)
+envscan --json          # machine-readable
 ```
 
 ```text
@@ -80,7 +80,7 @@ Deno.env.get("API_KEY")        // Deno
 `NODE_ENV` and `CI` are ignored by default; add more with the API:
 
 ```ts
-import { scanEnv } from "doctorenv/api";
+import { scanEnv } from "envscan/api";
 
 const report = scanEnv({
   root: process.cwd(),
