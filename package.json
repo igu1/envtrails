@@ -1,0 +1,57 @@
+{
+  "name": "doctorenv",
+  "version": "0.1.0",
+  "description": "Find broken, missing, unused, and inconsistent environment variables across your project.",
+  "author": {
+    "name": "Eesa Zakariyya",
+    "email": "eesaard@gmail.com",
+    "url": "https://github.com/igu1"
+  },
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./api": {
+      "types": "./dist/api.d.ts",
+      "import": "./dist/api.js",
+      "require": "./dist/api.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": { "doctorenv": "dist/index.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup src/api.ts src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "example": "node dist/index.js --help"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": [
+    "env",
+    "environment",
+    "dotenv",
+    "lint",
+    "audit",
+    "cli",
+    "devops",
+    "12-factor"
+  ],
+  "repository": { "type": "git", "url": "git+https://github.com/igu1/doctorenv.git" },
+  "bugs": { "url": "https://github.com/igu1/doctorenv/issues" },
+  "homepage": "https://github.com/igu1/doctorenv#readme",
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^22.0.0"
+  }
+}
