@@ -1,25 +1,25 @@
-# envscan
+# envtrails
 
 **Find broken, missing, unused, and inconsistent environment variables across your project.**
 
 > One small problem. One obvious API. Very little setup. Immediate value.
 
 `.env`, `.env.local`, `.env.example`, Dockerfiles, compose files and source
-code drift apart over time. `envscan` reads them all and tells you exactly
+code drift apart over time. `envtrails` reads them all and tells you exactly
 what's off.
 
 ## Install
 
 ```bash
-npm i -g envscan    # or run via npx envscan
+npm i -g envtrails    # or run via npx envtrails
 ```
 
 ## Usage
 
 ```bash
-envscan                 # friendly report
-envscan --strict        # exit code 1 when issues are found (for CI)
-envscan --json          # machine-readable
+envtrails                 # friendly report
+envtrails --strict        # exit code 1 when issues are found (for CI)
+envtrails --json          # machine-readable
 ```
 
 ```text
@@ -80,7 +80,7 @@ Deno.env.get("API_KEY")        // Deno
 `NODE_ENV` and `CI` are ignored by default; add more with the API:
 
 ```ts
-import { scanEnv } from "envscan/api";
+import { scanEnv } from "envtrails/api";
 
 const report = scanEnv({
   root: process.cwd(),

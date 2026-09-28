@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * envscan — scan the project for broken / missing / unused / drift env vars.
+ * envtrails — scan the project for broken / missing / unused / drift env vars.
  *
- *   envscan
- *   envscan --strict      (exit code 1 when issues are found)
- *   envscan --json        (machine-readable)
+ *   envtrails
+ *   envtrails --strict      (exit code 1 when issues are found)
+ *   envtrails --json        (machine-readable)
  */
 import * as path from "node:path";
 import { scanEnv } from "./api";
@@ -18,7 +18,7 @@ const dim = (s: string) => (color ? `\x1b[90m${s}\x1b[0m` : s);
 
 const args = process.argv.slice(2);
 if (args.includes("--help") || args.includes("-h")) {
-  console.error("envscan [--strict] [--json] [--root .]");
+  console.error("envtrails [--strict] [--json] [--root .]");
   process.exit(0);
 }
 const rootArg = args.indexOf("--root");

@@ -1,5 +1,5 @@
 {
-  "name": "envscan",
+  "name": "envtrails",
   "version": "0.1.0",
   "description": "Find broken, missing, unused, and inconsistent environment variables across your project.",
   "author": {
@@ -25,7 +25,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": { "envscan": "dist/index.js" },
+  "bin": { "envtrails": "dist/index.js" },
   "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsup src/api.ts src/index.ts --format esm,cjs --dts --clean",
@@ -44,9 +44,9 @@
     "devops",
     "12-factor"
   ],
-  "repository": { "type": "git", "url": "git+https://github.com/igu1/envscan.git" },
-  "bugs": { "url": "https://github.com/igu1/envscan/issues" },
-  "homepage": "https://github.com/igu1/envscan#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/igu1/envtrails.git" },
+  "bugs": { "url": "https://github.com/igu1/envtrails/issues" },
+  "homepage": "https://github.com/igu1/envtrails#readme",
   "devDependencies": {
     "tsup": "^8.5.0",
     "tsx": "^4.20.0",

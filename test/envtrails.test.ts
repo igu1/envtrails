@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { scanEnv, usagesIn, declarationsIn } from "../src/api";
 
 function scratch(): string {
-  return mkdtempSync(path.join(os.tmpdir(), "envscan-"));
+  return mkdtempSync(path.join(os.tmpdir(), "envtrails-"));
 }
 
 describe("patterns", () => {
